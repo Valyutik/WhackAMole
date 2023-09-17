@@ -6,17 +6,16 @@ namespace WhackTheMole.Scripts.Installers
 {
     public class GridGeneratorInstaller : MonoInstaller
     {
-        [SerializeField] private Transform transformParent;
+        [SerializeField] private Transform container;
         [Range(2,10)]
         [SerializeField] private int cellCount;
-        
         private Cell _cellPrefab;
 
         public override void InstallBindings()
         {
             _cellPrefab = Resources.Load<Cell>("Prefabs/Cells/Cell");
-            var gridGenerator = new SquareGridGenerator(_cellPrefab, transformParent, cellCount);
-            Container.Bind<GridGeneratorBase>().FromInstance(gridGenerator).AsSingle();
+            Container.Bind<GridGeneratorBase>().To<SquareGridGenerator>().FromNew().AsSingle()
+                .WithArguments(_cellPrefab, container, cellCount);
         }
     }
 }
