@@ -13,13 +13,13 @@ namespace WhackTheMole.Scripts.GameConditions
         public event Action<string> OnChangeHealthEvent; 
         public event Action<string> OnScoreChangeEvent;
         public event Action OnWinEvent;
-
-        private int Score { get; set; }
-        private readonly int _numberWim;
         
         public float PlayTime { get; }
         public int Health { get; private set; }
         public Timer Timer { get; }
+        private int Score { get; set; }
+        private readonly int _numberWim;
+        private bool _canChange = true;
 
         public PlayerData(int health, float playTime, int numberWim)
         {
@@ -34,6 +34,12 @@ namespace WhackTheMole.Scripts.GameConditions
             Timer.StartTimer();
         }
 
+        public void OnFinishGame()
+        {
+            Timer.StopTimer();
+            _canChange = false;
+        }
+
         public void Tick()
         {
             Timer?.Tick(Time.deltaTime);
@@ -42,6 +48,7 @@ namespace WhackTheMole.Scripts.GameConditions
 
         public void TakeDamage(int damage)
         {
+            if (!_canChange) return;
             Health -= damage;
             OnChangeHealthEvent?.Invoke(Health.ToString());
             if (Health <= 0)
@@ -52,6 +59,7 @@ namespace WhackTheMole.Scripts.GameConditions
         
         public void AddScore(int count)
         {
+            if (!_canChange) return;
             Score += count;
             OnScoreChangeEvent?.Invoke(Score.ToString());
             if (Score < _numberWim) return;
