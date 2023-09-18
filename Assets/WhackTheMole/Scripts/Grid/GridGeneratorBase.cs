@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using WhackTheMole.Scripts.GameMachines;
 
 namespace WhackTheMole.Scripts.Grid
 {
-    public abstract class GridGeneratorBase
+    public abstract class GridGeneratorBase : IGameStateListener
     {
         public IEnumerable<ICell> Cells => CellsList;
         
@@ -17,6 +18,10 @@ namespace WhackTheMole.Scripts.Grid
             CellPrefab = cellPrefab;
             TransformParent = parent;
             CellCount = cellCount;
+        }
+
+        public void OnStartGame()
+        {
             GenerateGrid();
         }
 

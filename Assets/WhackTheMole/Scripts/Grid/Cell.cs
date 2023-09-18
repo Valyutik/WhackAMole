@@ -15,7 +15,7 @@ namespace WhackTheMole.Scripts.Grid
 
         public void AddMole(Mole mole)
         {
-            _currentMole ??= mole;
+            _currentMole = mole;
         }
 
         public bool CheckMole()

@@ -15,3 +15,5 @@ MonoBehaviour:
   <ViewPrefab>k__BackingField: {fileID: -7974356492834302941, guid: 015d0feb33a1be14485e9351859badee, type: 3}
   <Health>k__BackingField: 3
   <Lifetime>k__BackingField: 4
+  <Reward>k__BackingField: 15
+  <Damage>k__BackingField: 3

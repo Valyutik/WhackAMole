@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: MediumMole
   m_EditorClassIdentifier: 
   <ViewPrefab>k__BackingField: {fileID: -7974356492834302941, guid: 19fe5cf63e65d1544bf64617bdc3c8bf, type: 3}
-  <Health>k__BackingField: 4
+  <Health>k__BackingField: 2
   <Lifetime>k__BackingField: 6
+  <Reward>k__BackingField: 10
+  <Damage>k__BackingField: 2

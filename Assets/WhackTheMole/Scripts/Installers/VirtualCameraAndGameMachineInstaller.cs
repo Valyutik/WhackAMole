@@ -1,11 +1,12 @@
 ﻿using WhackTheMole.Scripts.Camera;
 using Cinemachine;
 using UnityEngine;
+using WhackTheMole.Scripts.GameMachines;
 using Zenject;
 
 namespace WhackTheMole.Scripts.Installers
 {
-    public class VirtualCameraInstaller : MonoInstaller
+    public class VirtualCameraAndGameMachineInstaller : MonoInstaller
     {
         [Range(0,100)]
         [SerializeField] private float padding;
@@ -14,7 +15,9 @@ namespace WhackTheMole.Scripts.Installers
         public override void InstallBindings()
         {
             Container.Bind<CinemachineVirtualCamera>().FromInstance(virtualCamera).AsSingle();
-            Container.Bind<CameraResizer>().FromNew().AsSingle().WithArguments(padding).NonLazy();
+            Container.BindInterfacesAndSelfTo<CameraResizer>().FromNew().AsSingle()
+                .WithArguments(padding).NonLazy();
+            Container.Bind<GameMachine>().FromNew().AsSingle();
         }
     }
 }

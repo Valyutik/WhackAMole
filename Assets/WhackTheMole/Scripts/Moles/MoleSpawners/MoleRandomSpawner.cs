@@ -4,15 +4,15 @@ using System.Linq;
 using System;
 using Random = UnityEngine.Random;
 
-namespace WhackTheMole.Scripts.Moles
+namespace WhackTheMole.Scripts.Moles.MoleSpawners
 {
     public class MoleRandomSpawner : MoleSpawnerBase
     {
-        public MoleRandomSpawner(GridGeneratorBase gridGenerator, MoleConfig[] moleConfigs, float spawnDelay) : base(
-            gridGenerator, moleConfigs, spawnDelay)
+        public MoleRandomSpawner(GridGeneratorBase gridGenerator, MoleSpawnerData data)
+            : base(gridGenerator, data)
         {
         }
-        
+
         protected override async void SpawnMole()
         {
             if (!CanSpawn) return;
@@ -22,7 +22,8 @@ namespace WhackTheMole.Scripts.Moles
 
             if (currentCell.CheckMole())
             {
-                var mole = new Mole(MoleConfigs[Random.Range(0, MoleConfigs.Length)], currentCell);
+                var concreteConfigs = MoleConfigs[Random.Range(0, MoleConfigs.Length)];
+                var mole = new Mole(concreteConfigs, currentCell, PlayerData);
                 currentCell.AddMole(mole);
             
                 await Task.Delay(Convert.ToInt32(SpawnDelay * 1000));

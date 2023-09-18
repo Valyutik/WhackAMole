@@ -1,5 +1,6 @@
 ﻿using WhackTheMole.Scripts.Moles;
 using UnityEngine;
+using WhackTheMole.Scripts.Moles.MoleSpawners;
 using Zenject;
 
 namespace WhackTheMole.Scripts.Installers
@@ -13,8 +14,8 @@ namespace WhackTheMole.Scripts.Installers
         public override void InstallBindings()
         {
             _moleConfigs = Resources.LoadAll<MoleConfig>("Configs");
-            Container.BindInterfacesTo<MoleRandomSpawner>().FromNew().AsSingle()
-                .WithArguments(_moleConfigs, spawnDelay);
+            Container.Bind<MoleSpawnerData>().FromNew().AsSingle().WithArguments(_moleConfigs, spawnDelay);
+            Container.BindInterfacesTo<MoleRandomSpawner>().FromNew().AsSingle();
         }
     }
 }
