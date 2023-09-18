@@ -1,4 +1,5 @@
-﻿using WhackTheMole.Scripts.UI;
+﻿using System;
+using WhackTheMole.Scripts.UI;
 using UnityEngine;
 using WhackTheMole.Scripts.GameConditions;
 using WhackTheMole.Scripts.GameMachines;
@@ -8,6 +9,7 @@ namespace WhackTheMole.Scripts.Installers
 {
     public class GameConditionInstaller : MonoInstaller
     {
+        [SerializeField] private Transform container;
         [SerializeField] private SelectionPanelView panelView;
         [SerializeField] private LosePanelView losePanelView;
         [Range(1, 1000)]
@@ -23,7 +25,6 @@ namespace WhackTheMole.Scripts.Installers
         {
             _data = new PlayerData(heathPlayer, playTime, scoreWin);
             Container.BindInterfacesAndSelfTo<PlayerData>().FromInstance(_data).AsSingle();
-            
         }
 
         private void Awake()
@@ -33,16 +34,30 @@ namespace WhackTheMole.Scripts.Installers
 
         private void BindCondition()
         {
-            var prefabs = Container.ResolveAll<PlayerDataViewBase>();
+            var prefabs = Resources.LoadAll<PlayerDataViewBase>("Prefabs/Views");
             panelView.OnHpConditionEvent += () =>
             {
                 var hpLoseCondition = new HpLoseCondition(losePanelView, _data, Container.Resolve<GameMachine>());
                 hpLoseCondition.Subscribe();
+                foreach (var viewBase in prefabs)
+                {
+                    if (viewBase is not (HealthView or ScoreView)) continue;
+                    var view = Instantiate(viewBase, container);
+                    Container.Inject(view);
+                    view.OnStartGame();
+                }
             };
             panelView.OnTimeConditionEvent += () =>
             {
                 var timeLoseCondition = new TimeLoseCondition(losePanelView, _data, Container.Resolve<GameMachine>());
                 timeLoseCondition.Subscribe();
+                foreach (var viewBase in prefabs)
+                {
+                    if (viewBase is not (TimeView or ScoreView)) continue;
+                    var view = Instantiate(viewBase, container);
+                    Container.Inject(view);
+                    view.OnStartGame();
+                }
             };
         }
     }

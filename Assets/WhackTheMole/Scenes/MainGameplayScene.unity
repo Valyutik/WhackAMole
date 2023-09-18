@@ -1025,7 +1025,6 @@ GameObject:
   - component: {fileID: 909074350}
   - component: {fileID: 909074354}
   - component: {fileID: 909074356}
-  - component: {fileID: 909074357}
   - component: {fileID: 909074353}
   m_Layer: 0
   m_Name: SceneContext
@@ -1065,7 +1064,6 @@ MonoBehaviour:
   - {fileID: 909074350}
   - {fileID: 909074354}
   - {fileID: 909074356}
-  - {fileID: 909074357}
   - {fileID: 909074353}
   _installerPrefabs: []
   _autoRun: 1
@@ -1138,24 +1136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694d08da9c0d4d07af0a2f225ea9bc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  container: {fileID: 1877416491}
   panelView: {fileID: 1754237613}
   losePanelView: {fileID: 1339575681}
   scoreWin: 100
   heathPlayer: 10
   playTime: 60
---- !u!114 &909074357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909074349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4939b98ca604deaa99eb92e13cb119f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  container: {fileID: 1877416491}
 --- !u!1 &927283296
 GameObject:
   m_ObjectHideFlags: 0
