@@ -1,8 +1,7 @@
-﻿using System;
+﻿using WhackTheMole.Scripts.GameConditions;
+using WhackTheMole.Scripts.GameMachines;
 using WhackTheMole.Scripts.UI;
 using UnityEngine;
-using WhackTheMole.Scripts.GameConditions;
-using WhackTheMole.Scripts.GameMachines;
 using Zenject;
 
 namespace WhackTheMole.Scripts.Installers
@@ -18,7 +17,6 @@ namespace WhackTheMole.Scripts.Installers
         [SerializeField] private int heathPlayer;
         [Range(1,100)]
         [SerializeField] private float playTime;
-
         private PlayerData _data;
         
         public override void InstallBindings()

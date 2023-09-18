@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using WhackTheMole.Scripts.GameMachines;
+using System.Collections.Generic;
 using UnityEngine;
-using WhackTheMole.Scripts.GameMachines;
 
 namespace WhackTheMole.Scripts.Grid
 {

@@ -1,6 +1,6 @@
-﻿using WhackTheMole.Scripts.Moles;
+﻿using WhackTheMole.Scripts.Moles.MoleSpawners;
+using WhackTheMole.Scripts.Moles;
 using UnityEngine;
-using WhackTheMole.Scripts.Moles.MoleSpawners;
 using Zenject;
 
 namespace WhackTheMole.Scripts.Installers

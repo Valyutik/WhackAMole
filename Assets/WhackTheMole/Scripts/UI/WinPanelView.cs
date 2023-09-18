@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using WhackTheMole.Scripts.GameConditions;
+﻿using WhackTheMole.Scripts.GameConditions;
 using WhackTheMole.Scripts.GameMachines;
+using UnityEngine;
 using Zenject;
 
 namespace WhackTheMole.Scripts.UI

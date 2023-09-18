@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using WhackTheMole.Scripts.GameConditions;
-using WhackTheMole.Scripts.Grid;
+﻿using WhackTheMole.Scripts.GameConditions;
 using WhackTheMole.Scripts.Utilities;
+using WhackTheMole.Scripts.Grid;
+using UnityEngine;
 
 namespace WhackTheMole.Scripts.Moles
 {

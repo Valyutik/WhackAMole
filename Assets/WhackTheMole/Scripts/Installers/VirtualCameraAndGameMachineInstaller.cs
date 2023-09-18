@@ -1,7 +1,7 @@
-﻿using WhackTheMole.Scripts.Camera;
+﻿using WhackTheMole.Scripts.GameMachines;
+using WhackTheMole.Scripts.Camera;
 using Cinemachine;
 using UnityEngine;
-using WhackTheMole.Scripts.GameMachines;
 using Zenject;
 
 namespace WhackTheMole.Scripts.Installers

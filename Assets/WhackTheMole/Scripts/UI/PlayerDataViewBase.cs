@@ -1,8 +1,8 @@
-﻿using TMPro;
-using UnityEngine;
-using WhackTheMole.Scripts.GameConditions;
+﻿using WhackTheMole.Scripts.GameConditions;
 using WhackTheMole.Scripts.GameMachines;
+using UnityEngine;
 using Zenject;
+using TMPro;
 
 namespace WhackTheMole.Scripts.UI
 {
@@ -21,11 +21,7 @@ namespace WhackTheMole.Scripts.UI
             gameObject.SetActive(false);
             Subscribe();
         }
-
-        protected abstract void Subscribe();
-
-        protected abstract void Unsubscribe();
-
+        
         public void OnStartGame()
         {
             gameObject.SetActive(true);
@@ -35,6 +31,10 @@ namespace WhackTheMole.Scripts.UI
         {
             Unsubscribe();
         }
+
+        protected abstract void Subscribe();
+
+        protected abstract void Unsubscribe();
 
         protected void ChangeText(string text)
         {

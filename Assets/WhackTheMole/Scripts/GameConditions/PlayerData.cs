@@ -8,16 +8,14 @@ namespace WhackTheMole.Scripts.GameConditions
 {
     public class PlayerData : ITickable, IGameStateListener
     {
-        public event Action OnHpPlayerLostEvent;
-        public event Action<string> OnChangePlayTimeEvent; 
-        public event Action<string> OnChangeHealthEvent; 
-        public event Action<string> OnScoreChangeEvent;
-        public event Action OnWinEvent;
+        public event Action OnHpPlayerLostEvent, OnWinEvent;
+        public event Action<string> OnChangePlayTimeEvent, OnScoreChangeEvent, OnChangeHealthEvent;
         
+        public Timer Timer { get; }
         public float PlayTime { get; }
         public int Health { get; private set; }
-        public Timer Timer { get; }
         private int Score { get; set; }
+        
         private readonly int _numberWim;
         private bool _canChange = true;
 

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine;
 
 namespace WhackTheMole.Scripts.UI
 {

@@ -1,6 +1,6 @@
+using WhackTheMole.Scripts.GameMachines;
 using WhackTheMole.Scripts.Grid;
 using UnityEngine;
-using WhackTheMole.Scripts.GameMachines;
 using Zenject;
 
 namespace WhackTheMole.Scripts.Installers

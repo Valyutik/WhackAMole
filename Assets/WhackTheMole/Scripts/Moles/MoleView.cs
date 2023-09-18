@@ -1,6 +1,6 @@
-﻿using System;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using System;
 
 namespace WhackTheMole.Scripts.Moles
 {

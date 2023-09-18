@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using WhackTheMole.Scripts.GameConditions;
+﻿using WhackTheMole.Scripts.GameConditions;
 using WhackTheMole.Scripts.GameMachines;
+using System.Collections.Generic;
 using WhackTheMole.Scripts.Grid;
 using Zenject;
 

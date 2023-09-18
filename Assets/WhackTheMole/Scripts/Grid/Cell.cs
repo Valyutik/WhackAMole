@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using WhackTheMole.Scripts.Moles;
+﻿using WhackTheMole.Scripts.Moles;
+using UnityEngine;
 
 namespace WhackTheMole.Scripts.Grid
 {

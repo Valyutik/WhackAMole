@@ -4,8 +4,8 @@ namespace WhackTheMole.Scripts.Grid
 {
     public class SquareGridGenerator : GridGeneratorBase
     {
-        public SquareGridGenerator(Cell cellPrefab, Transform parent, int cellCount) : base(cellPrefab, parent,
-            cellCount)
+        public SquareGridGenerator(Cell cellPrefab, Transform parent, int cellCount)
+            : base(cellPrefab, parent, cellCount)
         {
         }
         
@@ -19,7 +19,8 @@ namespace WhackTheMole.Scripts.Grid
                 for (var j = 0; j < CellCount; j++)
                 {
                     var position = new Vector3Int(i, 0, j) - gridCenter;
-                    var cell = Object.Instantiate(CellPrefab, position, Quaternion.identity, TransformParent);
+                    var cell = 
+                        Object.Instantiate(CellPrefab, position, Quaternion.identity, TransformParent);
                     cell.Initialize();
                     CellsList.Add(cell);
                 }
