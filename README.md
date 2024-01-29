@@ -1,7 +1,7 @@
-# WhackTheMole
+# Whack A Mole
 
 ## About
-WhackTheMole game made for code review by Ilya Yakovlev  
+Whack A Mole game made for code review by Ilya Yakovlev  
 Here's a stream of my project: https://youtu.be/Nj6Issq4Lfg?t=7168
 
 ## Gameplay
